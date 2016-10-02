@@ -73,33 +73,27 @@ function NarrowItDownController(MenuSearchService) {
   };
 }
 
-
 MenuSearchService.$inject = ['$http', 'ApiBasePath']
 function MenuSearchService($http, ApiBasePath) {
-  var service = this;
-
-  service.getMenuCategories = function () {
-    var response = $http({
-      method: "GET",
-      url: (ApiBasePath + "/categories.json")
-    });
-
-    return response;
-  };
+  var service = this;  
 
   service.getMatchedMenuItems = function(searchTerm){
     
     var response = $http({
         method: "GET",
-        url: (ApiBasePath + "/categories.json")
-      }).then(function (result){
+        url: (ApiBasePath + "/menu_items.json")
+     })
+    .then(function (result){
         var data = result.data;
           var menuFindIems = [];
-          for (var x in data) {
-            var category  = data[x];        
-            if(category.name.toLowerCase().indexOf(searchTerm.toLowerCase())>=0){
+          console.log(data);
+          var menus  = data.menu_items;
+          console.log(menus);
+          for (var x in menus) {
+            var category  = menus[x];
+          if(category.name.toLowerCase().indexOf(searchTerm.toLowerCase())>=0){
               menuFindIems.push(category);
-            }            
+            }
           }
         return menuFindIems;
     });  
