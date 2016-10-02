@@ -1,0 +1,7 @@
+<ul>
+<li ng-repeat="category in list.items">
+{{ category.short_name }} {{ category.name }}
+<button ng-click="list.onRemove({index:$index});">Don't want this one!</button>
+</li>
+</ul>
+<div ng-if="list.isEmpty()" class="error">{{list.errormessage}}</div>
