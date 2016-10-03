@@ -114,6 +114,3 @@ service.getMenuForCategory = function (shortName) {
 }
 
 })();
-
-//https://kennonoutlaw.github.io/coursera-jh-web/angularjs/module3-solution/index.html
-//https://thangthin.github.io/angular_coursera/module3-solution/
