@@ -5,7 +5,7 @@ angular.module('MenuSearchApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
 .directive('listItem', ListItem)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
 
 function ListItem() {
   //ddo: directive definiiton object
@@ -114,3 +114,6 @@ service.getMenuForCategory = function (shortName) {
 }
 
 })();
+
+//https://kennonoutlaw.github.io/coursera-jh-web/angularjs/module3-solution/index.html
+//https://thangthin.github.io/angular_coursera/module3-solution/
