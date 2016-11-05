@@ -1,0 +1,12 @@
+<div id="main-content" class="container">
+  <h1> My Info </h1>
+  <div ng-if="!myInfoCtrl.registered">
+  		<span> Not Registered </span>
+   </div>
+   <div ng-if="myInfoCtrl.registered">
+   		<h5>Favourite menu</h5>
+  		<span> {{myInfoCtrl.menuItem.name}} </span><br>
+  		<span> {{myInfoCtrl.menuItem.description}} </span><br>
+  		<img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.menuItem.name}}">
+   </div>
+</div>
